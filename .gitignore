@@ -2,7 +2,7 @@ node_modules
 .vscode
 handlers
 events
-config
+config.json
 storage
 setup.bat
 background.png
