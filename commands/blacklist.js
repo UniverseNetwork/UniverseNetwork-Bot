@@ -56,9 +56,13 @@ module.exports = {
                         .setTitle('**Prefix:** `' + Prefix + '`')
                         .setDescription(':clipboard: **Diminta Oleh** <@' + message.author + '>' + '\n\u200B')
                         .addField('\u200B', '\u200B', true)
-                        .addField('**List Of BlackList Channels Commands', '\u200B', true)
-                        .addField(`${Prefix}blacklist channel add\n${Prefix}`)
-                    )
+                        .addField('**List Of BlackList Channels Commands**', '\u200B', true)
+                        .addField('\u200B', '\u200B', true)
+                        .addField(`\`${Prefix}blacklist channel add <Channel>\``, 'Untuk Menambahkan Channel Ke Dalam BlackList\n\u200B')
+                        .addField(`\`${Prefix}blacklist channel remove <Channel>\`\n\`${Prefix}blacklist channel delete <Channel>\``, 'Untuk Menghapus Channel Dari BlackList\n\u200B')
+                        .addField(`\`${Prefix}blacklist channel list\``, 'Untuk Melihat Channel Yang Di BlackList\n\u200B')
+                        .addField('\u200B\n:memo: Catatan', '**Jika kata berkurung `<>`**\nMaka sifatnya wajib di isi!\n\n**Jika kata berkurung `[]`**\nMaka sifatnya tidak harus di isi!')
+                        .setFooter('Made By ARVIN3108 ID', Icon))
                 }
             })
         } else {
@@ -71,7 +75,9 @@ module.exports = {
                 .addField('**List Of BlackList Commands**', '\u200B', true)
                 .addField('\u200B', '\u200B', true)
                 .addField(`\`${Prefix}blacklist channel <add|remove/delete|list>\``, 'Membuat Channel Yang Di BlackList Tidak Bisa Menggunakan Command Bot Ini')
-                .addField(`\`${Prefix}blacklist word <add|remove/delete|list>\``, 'Membuat Kata Yang Di BlackList Akan Dihapus Secara Otomatis'))
+                .addField(`\`${Prefix}blacklist word <add|remove/delete|list>\``, 'Membuat Kata Yang Di BlackList Akan Dihapus Secara Otomatis')
+                .addField('\u200B\n:memo: Catatan', '**Jika kata berkurung `<>`**\nMaka sifatnya wajib di isi!\n\n**Jika kata berkurung `[]`**\nMaka sifatnya tidak harus di isi!')
+                .setFooter('Made By ARVIN3108 ID', Icon))
         }
     }
 }

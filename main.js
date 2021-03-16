@@ -1,19 +1,19 @@
 require('discord-reply');
-const Discord = require('discord.js'),
+require('dotenv').config();
+const Bot_Prefix = process.env.Prefix,
+    Version = process.env.Version,
+    MongoDB = process.env.MongoDB,
+    Icon = process.env.Icon,
+    YTCookie = process.env.YTCookie,
+    Discord = require('discord.js'),
     { MessageAttachment, MessageEmbed, GuildChannel, Client } = require('discord.js'),
     client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] }),
     DisTube = require('distube'),
-    distube = new DisTube(client, { searchSongs: true, emitNewSongOnly: true, youtubeCookie: 'AJi4QfGXisECpgPSFJVH9bKOg4aWMmDbgbjg55J503sfypo_n14GwCU7nEedsZnyfLvHWD2b2YlF' }),
+    distube = new DisTube(client, { searchSongs: true, emitNewSongOnly: true, youtubeCookie: YTCookie }),
     Canvas = require('canvas'),
     mongoose = require('mongoose'),
     { confirmation } = require('@reconlx/discord.js'),
-    // db = require('quick.db'),
-    { Token, Bot_Prefix, Version, MongoDB, Icon } = require('./config.json'),
-    // Token = process.env.Token,
-    // Prefix = process.env.Prefix,
-    // Version = process.env.Version,
-    // MongoDB = process.env.MongoDB,
-    // Icon = process.env.Icon,
+
     prefixSchema = require('./DataBase/Prefix'),
     blacklisted_channelSchema = require('./DataBase/BlackListed Channels'),
     tempvc = require("./module/tempvc.js"),
@@ -623,4 +623,4 @@ distube.on("playSong", async (message, queue, song) => {
         queue.volume = 100
     })
 
-login(client, Token)
+login(client)
