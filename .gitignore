@@ -1,0 +1,9 @@
+node_modules
+.vscode
+handlers
+events
+config
+storage
+setup.bat
+background.png
+backgrounds
