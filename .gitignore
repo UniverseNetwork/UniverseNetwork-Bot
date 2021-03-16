@@ -1,9 +1,9 @@
 node_modules
-.vscode
-handlers
-events
 config.json
 storage
-setup.bat
+handlers
+events
 background.png
+setup.bat
+.vscode
 backgrounds
