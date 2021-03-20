@@ -13,7 +13,7 @@ const Bot_Prefix = process.env.Prefix,
     Canvas = require('canvas'),
     mongoose = require('mongoose'),
     { confirmation } = require('@reconlx/discord.js'),
-
+    report = require('./Functions/report'),
     prefixSchema = require('./DataBase/Prefix'),
     blacklisted_channelSchema = require('./DataBase/BlackListed Channels'),
     tempvc = require("./module/tempvc.js"),
@@ -90,27 +90,34 @@ client.once('ready', () => {
     .on('message', msg => {
         if (msg.author.bot) return;
 
-        if (msg.content === "Halo?" || msg.content === "halo?" || msg.content === "halo" || msg.content === "Halo") {
+        if (msg.content?.toLowerCase() === "Halo?" || msg.content?.toLowerCase() === "halo") {
             msg.lineReply('Hai!');
         };
 
-        if (msg.content === "Hello?" || msg.content === "hello?" || msg.content === "hello" || msg.content === "Hello") {
+        if (msg.content?.toLowerCase() === "Hello?" || msg.content?.toLowerCase() === "hello") {
             msg.lineReply('Hi!');
         };
     })
     .on('guildDelete', guild => {
-        prefixSchema.findOne({ Guild: guild.id }, (err, data) => {
-            if (err) throw err;
+        let options = { Guild: guild.id };
+        prefixSchema.findOne(options, (e, data) => {
+            if (e) throw e;
             if (data) {
-                prefixSchema.findOneAndDelete({ Guild: guild.id })
-            }
+                prefixSchema.findOneAndDelete(options);
+            };
+        });
+        blacklisted_channelSchema.findOne(options, (e, data) => {
+            if (e) throw e;
+            if (data) {
+                blacklisted_channelSchema.findOneAndDelete(options);
+            };
         })
     })
     .on('channelCreate', ch => {
         ch.createWebhook('UniversNetwork')
     })
     .on('error', e => {
-        client.users.cache.get('700166055326384179').send('**Discord.JS Error**\n```js\n' + e + '\n```')
+        report('Discord.JS Error', e);
     })
     // .on('messageReactionAdd', async (reaction, user) => {
     //     const mainchannel = '804318335978045460',
@@ -440,8 +447,7 @@ distube.on("playSong", async (message, queue, song) => {
     // )
     const voiceChannel = message.member.voice.channel,
         Prefix = await prefixHandlers(message),
-        ch = client.channels.cache.get(message.channel.id),
-        webhooks = await ch.fetchWebhooks(),
+        webhooks = await message.channel.fetchWebhooks(),
         wh = webhooks.first();
 
     wh.send({
@@ -467,8 +473,7 @@ distube.on("playSong", async (message, queue, song) => {
     .on("addSong", async (message, queue, song) => {
         // message.channel.send(
         // `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`)
-        const ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+        const webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first(),
             Prefix = await prefixHandlers(message);
 
@@ -496,8 +501,7 @@ distube.on("playSong", async (message, queue, song) => {
         //     `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`)
         const voiceChannel = message.member.voice.channel,
             Prefix = await prefixHandlers(message),
-            ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+            webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first();
 
 
@@ -539,8 +543,7 @@ distube.on("playSong", async (message, queue, song) => {
     .on("addList", async (message, queue, playlist) => {
         // message.channel.send(
         //     `Added \`${playlist.name}\` playlist (${playlist.songs.length} songs) to queue\n${status(queue)}`)
-        const ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+        const webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first(),
             Prefix = await prefixHandlers(message);
 
@@ -564,8 +567,7 @@ distube.on("playSong", async (message, queue, song) => {
     // DisTubeOptions.searchSongs = true
     .on("searchResult", async (message, result) => {
         let i = 0,
-            ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+            webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first();
 
         wh.send(`**Pilih Salah Satu Lagu Dibawah Ini**\n*Ketik Salah Satu Angka Untuk Memilih*\n\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n\n")}\n\n*Ketik Huruf Apapun Atau Tunggu 1 Menit Untuk Membatalkan*\n\n**Diminta Oleh** ${message.author}`, {
@@ -575,8 +577,7 @@ distube.on("playSong", async (message, queue, song) => {
     })
     // DisTubeOptions.searchSongs = true
     .on("searchCancel", async (message) => {
-        const ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+        const webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first();
 
         wh.send(':x: **Pencarian Dibatalkan**', {
@@ -586,10 +587,9 @@ distube.on("playSong", async (message, queue, song) => {
     })
 
     .on("error", async (message, e) => {
-        const ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+        const webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first();
-        client.users.cache.get('792994169659981846').send('**DisTube Error**' + '\n```js' + e + '\n```');
+        report('DisTube Error', e);
         wh.send(':x: **Error Terdeteksi! Melaporkan Error Ke <@700166055326384179>**', {
             username: 'UniversNetwork Song Player',
             avatarURL: 'https://i.imgur.com/pBmA5S6.png'
@@ -597,8 +597,7 @@ distube.on("playSong", async (message, queue, song) => {
     })
 
     .on('empty', async message => {
-        const ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+        const webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first();
 
         wh.send(':x: **Tidak Ada Orang Di Voice Channel!**\n:no_entry: **Meninggalkan Voice Channel!**', {
@@ -608,8 +607,7 @@ distube.on("playSong", async (message, queue, song) => {
     })
 
     .on('noRelated', async message => {
-        const ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+        const webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first();
 
         wh.send(':x: **Tidak Ada Lagu Yang Bisa Diputar!\n:stop_button: **Menghentikan Pemutar Lagu!**', {
@@ -622,5 +620,7 @@ distube.on("playSong", async (message, queue, song) => {
         queue.autoplay = false
         queue.volume = 100
     })
-
+module.exports = {
+    client: client
+};
 login(client)
