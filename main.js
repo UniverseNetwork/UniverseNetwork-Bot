@@ -13,18 +13,18 @@ const Bot_Prefix = process.env.Prefix,
     Canvas = require('canvas'),
     mongoose = require('mongoose'),
     { confirmation } = require('@reconlx/discord.js'),
-    report = require('./Functions/report'),
+    report = require('./Functions/Report')(client),
     prefixSchema = require('./DataBase/Prefix'),
     blacklisted_channelSchema = require('./DataBase/BlackListed Channels'),
     tempvc = require("./module/tempvc.js"),
     login = require('./module/login.js');
+module.exports = { client: client };
 // tempvc(client)
 mongoose.connect(MongoDB, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false
 }).then(console.log('Connected To MongoDB'))
-
 client.commands = new Discord.Collection();
 let prefixHandlers = async (message) => {
     let Prefix,
@@ -114,7 +114,7 @@ client.once('ready', () => {
         })
     })
     .on('channelCreate', ch => {
-        ch.createWebhook('UniversNetwork')
+        ch.createWebhook('UniversNetwork');
     })
     .on('error', e => {
         report('Discord.JS Error', e);
@@ -617,10 +617,7 @@ distube.on("playSong", async (message, queue, song) => {
     })
 
     .on('initQueue', queue => {
-        queue.autoplay = false
-        queue.volume = 100
+        queue.autoplay = false;
+        queue.volume = 100;
     })
-module.exports = {
-    client: client
-};
 login(client)

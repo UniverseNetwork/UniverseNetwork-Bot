@@ -5,7 +5,8 @@ var { get } = require('request-promise-native'),
             headless: true
         }
     }),
-    { Message, Client } = require('discord.js')
+    { Message, Client } = require('discord.js'),
+    report = require('../Functions/report')
 module.exports = {
     name: 'search',
     description: 'Search image from google',
@@ -65,19 +66,19 @@ module.exports = {
                     },
                     json: true
                 }).then(body => {
-                    let tipetayang = body.data[0].attributes.subtype,
-                        statuspembuatan = body.data[0].attributes.status,
-                        yt = body.data[0].attributes.youtubeVideoId,
-                        endDate = body.data[0].attributes.endDate,
-                        coverImage = body.data[0].attributes.coverImage,
-                        nsfw = body.data[0].attributes.nsfw;
-                    nsfw = nsfw == false ? 'Tidak' : 'Ya';
-                    coverImage = coverImage == null ? null : body.data[0].attributes.coverImage.original;
-                    endDate = endDate == null ? "***Tidak Diketahui***" : `**${endDate}**`;
-                    statuspembuatan = statuspembuatan == "finished" ? "Selesai" : "Dalam Pembuatan";
-                    tipetayang = tipetayang == "movie" ? "Movie" : "TV";
-                    yt = yt == null ? "*Tidak Tersedia*" : `https://youtu.be/${yt}`;
                     try {
+                        let tipetayang = body.data[0].attributes.subtype,
+                            statuspembuatan = body.data[0].attributes.status,
+                            yt = body.data[0].attributes.youtubeVideoId,
+                            endDate = body.data[0].attributes.endDate,
+                            coverImage = body.data[0].attributes.coverImage,
+                            nsfw = body.data[0].attributes.nsfw;
+                        nsfw = nsfw == false ? 'Tidak' : 'Ya';
+                        coverImage = coverImage == null ? null : body.data[0].attributes.coverImage.original;
+                        endDate = endDate == null ? "***Tidak Diketahui***" : `**${endDate}**`;
+                        statuspembuatan = statuspembuatan == "finished" ? "Selesai" : "Dalam Pembuatan";
+                        tipetayang = tipetayang == "movie" ? "Movie" : "TV";
+                        yt = yt == null ? "*Tidak Tersedia*" : `https://youtu.be/${yt}`;
                         wh.send({
                             username: options.username,
                             avatarURL: options.avatarURL,
@@ -101,12 +102,10 @@ module.exports = {
                                 .addField(':trophy: **Peringkat Popularitas**', `**TOP ${body.data[0].attributes.popularityRank}**`, true)
                                 .setFooter('Made By ARVIN3108 ID', Icon)]
                         })
-                    } catch (err) {
-                        console.log(err)
+                    } catch (e) {
+                        report('Kitsu Error', e)
                         return wh.send(`:x: **Anime** \`${query}\` **Tidak Dapat Ditemukan!**`, options)
                     }
-
-
                 })
             })
         } else if (type === 'urbandictionary') {
