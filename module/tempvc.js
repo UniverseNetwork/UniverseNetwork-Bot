@@ -1,5 +1,5 @@
 const jointocreatemap = new Map();
-module.exports = function (client) {
+module.exports = (client) => {
   const description = {
     name: "tempvc",
     filename: "tempvc.js",
