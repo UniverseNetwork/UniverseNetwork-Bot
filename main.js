@@ -1,10 +1,9 @@
 require('discord-reply');
-require('dotenv').config();
-const Bot_Prefix = process.env.Prefix,
-    Version = process.env.Version,
-    MongoDB = process.env.MongoDB,
-    Icon = process.env.Icon,
-    YTCookie = process.env.YTCookie,
+const Bot_Prefix = process.env.Prefix || require('./config.json').Prefix,
+    Version = process.env.Version || require('./config.json').Version,
+    MongoDB = process.env.MongoDB || require('./config.json').MongoDB,
+    Icon = process.env.Icon || require('./config.json').Icon,
+    YTCookie = process.env.YTCookie || require('./config.json').YTCookie,
     Discord = require('discord.js'),
     { MessageAttachment, MessageEmbed, GuildChannel, Client } = require('discord.js'),
     client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] }),
@@ -13,12 +12,10 @@ const Bot_Prefix = process.env.Prefix,
     Canvas = require('canvas'),
     mongoose = require('mongoose'),
     { confirmation } = require('@reconlx/discord.js'),
-    report = require('./Functions/Report')(client),
     prefixSchema = require('./DataBase/Prefix'),
     blacklisted_channelSchema = require('./DataBase/BlackListed Channels'),
     tempvc = require("./module/tempvc.js"),
     login = require('./module/login.js');
-module.exports = { client: client };
 // tempvc(client)
 mongoose.connect(MongoDB, {
     useUnifiedTopology: true,
@@ -47,19 +44,22 @@ let prefixHandlers = async (message) => {
         return ch;
     }
     return ch;
-},
-    // client.events = new Discord.Collection();
-    // ['command_handler', 'event_handler'].forEach(handler => {
-    //     require(`./handlers/${handler}`)(client, Discord, distube, DisTube)
-    // })
-    loadCMD = () => {
-        const commandFiles = require('fs').readdirSync('./commands/').filter(file => file.endsWith('.js'))
-        for (const file of commandFiles) {
-            delete require.cache[require.resolve(`./commands/${file}`)]
-            const cmd = require(`./commands/${file}`)
-            client.commands.set(cmd.name, cmd)
-        }
-    };
+}, report = (reason, e) => {
+    client.users.cache.get('700166055326384179').send(`**${reason}**\n\`\`\`js\n${e}\n\`\`\``)
+    console.log(e)
+}
+// client.events = new Discord.Collection();
+// ['command_handler', 'event_handler'].forEach(handler => {
+//     require(`./handlers/${handler}`)(client, Discord, distube, DisTube)
+// })
+loadCMD = () => {
+    const commandFiles = require('fs').readdirSync('./commands/').filter(file => file.endsWith('.js'))
+    for (const file of commandFiles) {
+        delete require.cache[require.resolve(`./commands/${file}`)]
+        const cmd = require(`./commands/${file}`)
+        client.commands.set(cmd.name, cmd)
+    }
+};
 loadCMD()
 client.once('ready', () => {
     console.log(client.user.username + ' Bot is online')
@@ -114,7 +114,7 @@ client.once('ready', () => {
         })
     })
     .on('channelCreate', ch => {
-        ch.createWebhook('UniversNetwork');
+        ch.createWebhook('UniversNetwork').catch(e => console.log(e))
     })
     .on('error', e => {
         report('Discord.JS Error', e);
@@ -357,8 +357,7 @@ client.once('ready', () => {
         if (await blacklist_channel(message) === true) return message.delete().then(message.channel.send(':x: **Kamu Tidak Bisa Menggunakan Bot Di Channel Ini!**').then(msg => msg.delete({ timeout: 3000 })));
         const args = message.content.slice(Prefix.length).split(/ +/),
             cmd = args.shift().toLowerCase(),
-            ch = client.channels.cache.get(message.channel.id),
-            webhooks = await ch.fetchWebhooks(),
+            webhooks = await message.channel.fetchWebhooks(),
             wh = webhooks.first();
         if (cmd === 'ip') {
             client.commands.get('ip').execute(message)
@@ -415,7 +414,7 @@ client.once('ready', () => {
         } else if (cmd === 'help' || cmd === '?') {
             client.commands.get('help').execute(message, client, MessageEmbed, Prefix, Icon);
         } else if (cmd === 'search') {
-            client.commands.get('search').execute(message, args, MessageEmbed, wh, Prefix, Icon, client);
+            client.commands.get('search').execute(message, args, MessageEmbed, wh, Prefix, Icon, client, report);
             // } else if (cmd === 'announcement' || cmd === 'ac') {
             //     client.commands.get('announcement').execute(message, args, client);
         } else if (cmd === 'minecraft' || cmd === 'mc') {
