@@ -190,7 +190,7 @@ module.exports = (client) => {
                                                                                                                 console.log('Loaded Minecraft Server Util Version ' + v)
                                                                                                             }
                                                                                                             console.log('\n===============================================================================\n')
-                                                                                                            client.login(require('../config.json').Token || process.env.Token)
+                                                                                                            client.login(process.env.Token)
                                                                                                         })
                                                                                                     })
                                                                                                 })
