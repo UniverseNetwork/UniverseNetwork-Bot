@@ -1,10 +1,8 @@
 node_modules
 config.json
 storage
-handlers
 events
-background.png
-setup.bat
-.vscode
+*.vscode
 backgrounds
-.env
+*.env
+*.bat
