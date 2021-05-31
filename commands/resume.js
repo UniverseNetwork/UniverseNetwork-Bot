@@ -3,7 +3,7 @@ module.exports = {
     async run(m) {
         m.delete
         let d = require('../Modules/DisTube'), g = require('../Modules/Client').guilds.cache.get('761872006513033238'),
-            { MessageEmbed } = require('discord.js'), wh = await m.channel.fetchWebhooks(), w = wh.first(), q = await d.getQueue(message),
+            { MessageEmbed } = require('discord.js'), wh = await m.channel.fetchWebhooks(), w = wh.first(), q = await d.getQueue(m),
             o = { username: `${g.name} Song Player`, avatarURL: 'https://i.imgur.com/pBmA5S6.png' };
         if (q) {
             d.resume(m); w.send({
