@@ -1,8 +1,9 @@
-const jointocreatemap = new Map();
-module.exports = (client) => {
+const jointocreatemap = new Map(),
+  client = require('../Modules/Client');
+module.exports = () => {
   const description = {
-    name: "tempvc",
-    filename: "tempvc.js",
+    name: "Temporary Voice Channel",
+    filename: "TempVC.js",
     version: "3.2"
   }
   //log that the module is loaded

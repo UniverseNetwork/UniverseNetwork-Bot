@@ -1,0 +1,1 @@
+module.exports = i => { return require('../Modules/Client').emojis.cache.get(i).toString() }

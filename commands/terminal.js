@@ -1,20 +1,15 @@
-const { exec } = require('child_process'),
-    { Message } = require('discord.js');
+let { exec } = require('child_process');
 module.exports = {
     name: 'terminal',
+    alias: 'cmd',
     description: '',
-    /**
-     * 
-     * @param {Message} message 
-     * @param {String[]} args 
-     */
-    execute(message, args) {
-        message.delete()
-        if (message.author.id !== '700166055326384179') return;
-        if (!args.join(' ')) return message.channel.send(':exclamation: **Kamu perlu menyertakan command yang ingin di jalankan!**');
-        exec(args.join(' '), (err, res) => {
-            if (err) return console.error(err)
-            message.channel.send(res.slice(0, 2000), { code: 'js' })
+    execute(m, a) {
+        m.delete();
+        if (m.author.id !== '700166055326384179') return;
+        if (!a.join(' ')) return m.channel.send(':exclamation: **Kamu perlu menyertakan command yang ingin di jalankan!**');
+        exec(a.join(' '), (e, r) => {
+            if (err) return console.error(e)
+            m.channel.send(r.slice(0, 2000), { code: 'js' })
         })
     }
 }

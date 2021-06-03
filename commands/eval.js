@@ -1,14 +1,13 @@
-const { inspect } = require('util'),
-    { Message } = require('discord.js');
+const { inspect } = require('util'), distube = require('../Modules/DisTube'), client = require('../Modules/Client'),
+    { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'eval',
-    description: '',
     /**
      * 
      * @param {Message} message 
      * @param {String[]} args 
      */
-    async execute(message, args, cmd, client, MessageEmbed, Prefix, Icon, wh, mongoose, distube) {
+    async run(message, args, cmd) {
         message.delete()
         if (message.author.id !== '700166055326384179') return;
         const code = args.join(' ')

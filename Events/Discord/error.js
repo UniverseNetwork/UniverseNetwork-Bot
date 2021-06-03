@@ -1,0 +1,1 @@
+module.exports = e => require('../../Functions/Report')('Discord.JS Error', e);

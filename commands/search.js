@@ -5,8 +5,7 @@ var { get } = require('request-promise-native'),
             headless: true
         }
     }),
-    { Message, Client } = require('discord.js'),
-    report = require('../Functions/report')
+    { Message, Client } = require('discord.js')
 module.exports = {
     name: 'search',
     description: 'Search image from google',
@@ -19,7 +18,7 @@ module.exports = {
      * @param {*} Icon 
      * @param {Client} client
      */
-    async execute(message, args, MessageEmbed, wh, Prefix, Icon, client) {
+    async execute(message, args, MessageEmbed, wh, Prefix, Icon, client, report) {
         message.delete()
         const query = args.slice(1).join(' '),
             type = args[0]?.toLowerCase();

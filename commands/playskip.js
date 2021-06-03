@@ -1,21 +1,22 @@
 module.exports = {
     name: 'playskip',
     description: 'Joins, plays a video from youtube, and skip the song',
-    execute(message, args, distube, wh) {
-        message.delete()
-        const voiceChannel = message.member.voice.channel,
-            music = args.join(" "),
-            options = {
+    async run(m, a) {
+        m.delete()
+        const vc = message.member.voice.channel,
+            d = require('../Modules/DisTube'),
+            music = a.join(" "),
+            o = {
                 username: 'UniversNetwork Song Player',
                 avatarURL: 'https://i.imgur.com/pBmA5S6.png'
-            };
-        if (message.member.roles.cache.has('799838913929412640')) {
-            if (!music) return wh.send(':exclamation: **Kamu perlu menyertakan nama atau link video!**', options);
-            if (!voiceChannel) return wh.send(':exclamation: **Kamu perlu berada di voice channel sebelum memutar lagu!**', options);
-            distube.playSkip(message, music);
-            wh.send(':mag_right: **Mencari** `' + music + '`', options);
+            }, wh = await m.channel.fetchWebhooks(), w = wh.first();
+        if (m.member.roles.cache.has('799838913929412640')) {
+            if (!music) return w.send(':exclamation: **Kamu perlu menyertakan nama atau link video!**', o);
+            if (!vc) return w.send(':exclamation: **Kamu perlu berada di voice channel sebelum memutar lagu!**', o);
+            d.playSkip(m, music);
+            w.send(':mag_right: **Mencari** `' + music + '`', o);
         } else {
-            wh.send('**Kamu tidak punya izin!**', options);
+            w.send('**Kamu tidak punya izin!**', o);
         };
     }
 }

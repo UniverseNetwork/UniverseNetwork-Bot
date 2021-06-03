@@ -10,9 +10,9 @@ module.exports = {
      * @param {Model} prefixSchema
      * @param {Client} client
      */
-    async execute(message, args, Bot_Prefix, MessageEmbed, Prefix, prefixSchema, confirmation, Icon, client) {
+    async execute(m, a) {
         message.delete()
-        const res = await args.slice(1).join(' '),
+        const res = await args.slice(1).join(' '), { confirmation } = require('@reconlx/discord.js'),
             type = args[0]?.toLowerCase();
 
         if (type === 'set') {

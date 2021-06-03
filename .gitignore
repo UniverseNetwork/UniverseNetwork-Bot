@@ -1,7 +1,5 @@
 node_modules
 config.json
-storage
-events
 *.vscode
 backgrounds
 *.env

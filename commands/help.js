@@ -1,20 +1,23 @@
 module.exports = {
     name: 'help',
     description: 'This is a help command',
-    async execute(message, client, MessageEmbed, Prefix, Icon) {
+    async run(m) {
         const prevEmoji = '⬅️',
             nextEmoji = '➡️',
+            c = require('../Modules/Client'),
+            Icon = process.env.Icon || require('../config.json').Icon,
+            Prefix = await require('../Functions/Handlers').prefix(m),
+            { MessageEmbed } = require('discord.js'),
             embed = new MessageEmbed()
                 .setColor('#02C2FF')
-                .setAuthor('UniversNetwork', client.user.displayAvatarURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
+                .setAuthor('UniversNetwork', c.user.displayAvatarURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
                 .setTitle('**Prefix:** `' + Prefix + '`')
-                .setDescription(':clipboard: **Diminta Oleh** <@' + message.author + '>\n\u200B\n\u200B')
+                .setDescription(':clipboard: **Diminta Oleh** <@' + m.author + '>\n\u200B\n\u200B')
                 .addField('\u200B', '\u200B', true)
                 .addField('Member List Of Commands', '\u200B', true)
                 .addField('\u200B', '\u200B', true)
                 .addField(`\`${Prefix}help\` \`${Prefix}?\``, 'Untuk memunculkan menu ini')
                 .addField(`\`${Prefix}ip\``, 'Untuk melihat ip dari server ini')
-                .addField(`\`${Prefix}website\` \`${Prefix}web\``, 'Untuk melihat website resmi dari server ini')
                 .addField(`\`${Prefix}whatsapp\` \`${Prefix}wa\``, 'Untuk melihat grup whatsapp dari server ini')
                 .addField(`\`${Prefix}play\` \`${Prefix}p\``, 'Untuk memutar lagu *(sama seperti bot musik pada umumnya)*')
                 .addField(`\`${Prefix}loop\` \`${Prefix}repeat\``, 'Untuk mengaktifkan atau menonaktifkan mode repeat lagu *(sama seperti bot musik pada umumnya)*')
@@ -32,52 +35,43 @@ module.exports = {
                 .addField(`\`${Prefix}info\``, 'Untuk melihat informasi dari server atau bot\n\u200B\n\u200B')
                 .addField('Check The Wiki For English Version', 'https://github.com/ARVIN3108/UniversNetwork/blob/main/README.md\n\u200B')
                 .addField('Halaman 1/2', 'Klik Emoji ' + nextEmoji + ' Untuk Pergi Ke Halaman Berikutnya')
-                .setFooter('Made By ARVIN3108 ID', Icon),
-
-            embeds = new MessageEmbed()
-                .setColor('#02C2FF')
-                .setAuthor('UniversNetwork', client.user.displayAvatarURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
-                .setTitle('**Prefix:** `' + Prefix + '`')
-                .setDescription(':clipboard: **Diminta Oleh** <@' + message.author + '>\n\u200B\n\u200B')
-                .addField('\u200B', '\u200B', true)
-                .addField('Admin List Of Commands', '\u200B', true)
-                .addField('\u200B', '\u200B', true)
-                .addField(`\`${Prefix}kick\``, 'Untuk meng-kick Member')
-                .addField(`\`${Prefix}ban\``, 'Untuk Meng-ban Member')
-                .addField(`\`${Prefix}mute\``, 'Untuk Meng-mute Member dengan waktu atau permanen')
-                .addField(`\`${Prefix}unmute\``, 'Untuk Meng-unmute Member')
-                .addField(`\`${Prefix}playskip\` \`${Prefix}ps\``, 'Untuk Memutar Dan Melewati Lagu Secara Bersamaan')
-                .addField(`\`${Prefix}volume\` \`${Prefix}vol\``, 'Untuk Mengubah Volume Suara Bot Saat Memutar Lagu')
-                .addField(`\`${Prefix}say\``, 'Untuk Mengirim Pesan Sebagai Bot')
-                .addField(`\`${Prefix}clear\``, 'Untuk Menghapus Pesan Dengan Cepat')
-                .addField(`\`${Prefix}prefix\``, 'Untuk Mengubah Prefix Bot Untuk Server Ini\n\u200B\n\u200B')
-                .addField('Check The Wiki For English Version', 'https://github.com/ARVIN3108/UniversNetwork/blob/main/README.md\n\u200B')
-                .addField('Halaman 2/2', 'Klik Emoji ' + prevEmoji + ' Untuk Pergi Ke Halaman Sebelumnya')
-                .setFooter('Made By ARVIN3108 ID', Icon)
-        let result = await message.channel.send(embed)
-        message.delete().then(result.react(nextEmoji))
-
-        client.on('messageReactionAdd', async (reaction, user) => {
-            if (reaction.message.partial) await reaction.message.fetch();
-            if (reaction.partial) await reaction.fetch();
-            if (user.bot) return;
-            if (!reaction.message.guild) return;
-            if (!message.author) return
-
-            if (result) {
-                if (reaction.emoji.name === nextEmoji) {
-                    await result.reactions.removeAll()
-                    await result.react(prevEmoji)
-                    await result.edit(embeds)
-                }
-
-                if (reaction.emoji.name === prevEmoji) {
-                    await result.reactions.removeAll()
-                    await result.react(nextEmoji)
-                    await result.edit(embed)
-                }
-            } else return
-
-        })
+                .setFooter('Made By ARVIN3108 ID', Icon);
+        let result = await m.channel.send(embed);
+        m.delete().then(result.react(nextEmoji));
+        c.on('messageReactionAdd', async (r, u) => {
+            if (u.bot) return;
+            if (!r.message.guild) return;
+            if (m.author.id !== u.id) return;
+            if (r.message.id === result.id) {
+                if (r.emoji.name === nextEmoji) {
+                    result.reactions.removeAll();
+                    result.react(prevEmoji);
+                    result.edit(new MessageEmbed()
+                        .setColor('#02C2FF')
+                        .setAuthor('UniversNetwork', client.user.displayAvatarURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
+                        .setTitle('**Prefix:** `' + Prefix + '`')
+                        .setDescription(':clipboard: **Diminta Oleh** <@' + m.author + '>\n\n\u200B')
+                        .addField('\u200B', '\u200B', true)
+                        .addField('Admin List Of Commands', '\u200B', true)
+                        .addField('\u200B', '\u200B', true)
+                        .addField(`\`${Prefix}kick\``, 'Untuk meng-kick Member')
+                        .addField(`\`${Prefix}ban\``, 'Untuk Meng-ban Member')
+                        .addField(`\`${Prefix}mute\``, 'Untuk Meng-mute Member dengan waktu atau permanen')
+                        .addField(`\`${Prefix}unmute\``, 'Untuk Meng-unmute Member')
+                        .addField(`\`${Prefix}playskip\` \`${Prefix}ps\``, 'Untuk Memutar Dan Melewati Lagu Secara Bersamaan')
+                        .addField(`\`${Prefix}volume\` \`${Prefix}vol\``, 'Untuk Mengubah Volume Suara Bot Saat Memutar Lagu')
+                        .addField(`\`${Prefix}say\``, 'Untuk Mengirim Pesan Sebagai Bot')
+                        .addField(`\`${Prefix}clear\``, 'Untuk Menghapus Pesan Dengan Cepat')
+                        .addField(`\`${Prefix}prefix\``, 'Untuk Mengubah Prefix Bot Untuk Server Ini\n\u200B\n\u200B')
+                        .addField('Check The Wiki For English Version', 'https://github.com/ARVIN3108/UniversNetwork/blob/main/README.md\n\u200B')
+                        .addField('Halaman 2/2', 'Klik Emoji ' + prevEmoji + ' Untuk Pergi Ke Halaman Sebelumnya')
+                        .setFooter('Made By ARVIN3108 ID', Icon));
+                } else if (r.emoji.name === prevEmoji) {
+                    result.reactions.removeAll();
+                    result.react(nextEmoji);
+                    result.edit(embed);
+                };
+            };
+        });
     }
-}
+};
