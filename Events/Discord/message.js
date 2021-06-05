@@ -13,7 +13,7 @@ module.exports = async m => {
                 w = await c.fetchWebhooks(),
                 attachment = m.attachments.size;
             attachment = attachment == 0 ? '' : '\n\n**File:** ' + m.attachments.map(i => `[${i.name}](${i.attachment})`).join(' ')
-            if (m.author.id === client.user.id) return ch.send(m.content, m.embeds, m.attachments);
+            if (m.author.id === client.user.id) return c.send(m.content, m.embeds, m.attachments);
             w.first().send(m.content + attachment, {
                 username: m.author.tag,
                 avatarURL: m.author.displayAvatarURL({ dynamic: true }),

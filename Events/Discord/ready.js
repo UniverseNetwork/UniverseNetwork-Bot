@@ -12,12 +12,4 @@ module.exports = () => {
             'Selamat Hari Raya Idul Fitri 1442 H - Mohon Maaf Lahir Dan Batin']
         client.user.setActivity(status[Math.floor(Math.random() * status.length)]);
     }, 1000)
-    // s.create({
-    //     guildOnly: false,
-    //     data: {
-    //         name: 'IP',
-    //         description: 'See The Official IP Minecraft Server of This Discord Server',
-    //         content: '**IP: play.universnetwork.xyz**'
-    //     }
-    // })
 }

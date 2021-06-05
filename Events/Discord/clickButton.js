@@ -281,5 +281,66 @@ module.exports = async (b) => {
                 });
             }
         }
+    } else if (!data) {
+        if (!transcript) return;
+        const options = { ID: b.message.id };
+        if (b.id === 'Delete') {
+            if (transcript.Status === 0) {
+                b.message.edit({
+                    buttons: [new MessageButton()
+                        .setID('No')
+                        .setStyle('red')
+                        .setLabel('Tidak'),
+                    new MessageButton()
+                        .setID('Yes')
+                        .setStyle('green')
+                        .setLabel('Ya')],
+                    embed: new MessageEmbed()
+                        .setColor('RANDOM')
+                        .setAuthor(g.name, g.iconURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
+                        .setTitle('Apakah kamu yakin untuk menghapus transcript?')
+                        .setDescription('Klik tombol dibawah ini untuk menjawab.')
+                        .setFooter('Made By ARVIN3108 ID', i)
+                })
+                await schema.transcript.findOneAndUpdate(options, {
+                    Guild: transcript.Guild,
+                    Channel: transcript.Channel,
+                    Ticket: transcript.Ticket,
+                    ID: transcript.ID,
+                    Status: 1
+                })
+            }
+        } else if (b.id === 'No') {
+            if (transcript.Status === 1) {
+                b.message.edit({
+                    buttons: [new MessageButton()
+                        .setID('Delete')
+                        .setStyle('red')
+                        .setLabel('Hapus Transcript')],
+                    embed: new MessageEmbed()
+                        .setColor('RANDOM')
+                        .setAuthor(g.name, g.iconURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
+                        .setDescription(`**Transcript Ini Terhubung Dengan Ticket** <#${transcript.Ticket}>\n\nKlik tombol dibawah ini untuk menghapus transcript.`)
+                        .setFooter('Made By ARVIN3108 ID', i)
+                });
+                await schema.transcript.findOneAndUpdate(options, {
+                    Guild: transcript.Guild,
+                    Channel: transcript.Channel,
+                    Ticket: transcript.Ticket,
+                    ID: transcript.ID,
+                    Status: 0
+                });
+            }
+        } else if (b.id === 'Yes') {
+            if (transcript.Status === 1) {
+                b.message.edit(new MessageEmbed()
+                    .setColor('RANDOM')
+                    .setAuthor(g.name, g.iconURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
+                    .setTitle('Transcript akan dihapus dalam 3 detik.')
+                    .setFooter('Made By ARVIN3108 ID', i));
+                setTimeout(() => b.channel.delete(), 3000);
+                await schema.transcript.findOneAndDelete(options);
+            }
+        }
     }
 }
