@@ -19,11 +19,11 @@ module.exports = () => {
             'Selamat Hari Raya Idul Fitri 1442 H - Mohon Maaf Lahir Dan Batin'],
             data = await ck.findOne({ Guild: '761872006513033238' }).catch(e => console.log(e));
         c.user.setActivity(status[Math.floor(Math.random() * status.length)])
-        if (c.channels.cache.get(data.WIB).name !== `🕑┊${wib}┊WIB` || c.channels.cache.get(data.WITA).name !== `🕒┊${wita}┊WITA` || c.channels.cache.get(data.WIT).name !== `🕕┊${wit}┊WIT`) {
+        if (c.channels.cache.get(data.WIB).name !== `『🕑』${wib}『WIB』` || c.channels.cache.get(data.WITA).name !== `『🕒』${wita}『WITA』` || c.channels.cache.get(data.WIT).name !== `『🕕』${wit}『WIT』`) {
             c.channels.cache.get(data.WIB).delete();
             c.channels.cache.get(data.WITA).delete();
             c.channels.cache.get(data.WIT).delete();
-            c.guilds.cache.get(data.Guild).channels.create(`🕑┊${wib}┊WIB`, {
+            c.guilds.cache.get(data.Guild).channels.create(`『🕑』${wib}『WIB』`, {
                 type: 'voice',
                 parent: data.Parent,
                 permissionOverwrites: [
@@ -33,7 +33,7 @@ module.exports = () => {
                         allow: ['VIEW_CHANNEL']
                     }
                 ]
-            }).then(wibch => c.guilds.cache.get(data.Guild).channels.create(`🕒┊${wita}┊WITA`, {
+            }).then(wibch => c.guilds.cache.get(data.Guild).channels.create(`『🕒』${wita}『WITA』`, {
                 type: 'voice',
                 parent: data.Parent,
                 permissionOverwrites: [
@@ -43,7 +43,7 @@ module.exports = () => {
                         allow: ['VIEW_CHANNEL']
                     }
                 ]
-            }).then(witach => c.guilds.cache.get(data.Guild).channels.create(`🕕┊${wit}┊WIT`, {
+            }).then(witach => c.guilds.cache.get(data.Guild).channels.create(`『🕕』${wit}『WIT』`, {
                 type: 'voice',
                 parent: data.Parent,
                 permissionOverwrites: [
@@ -74,7 +74,7 @@ module.exports = () => {
                         deny: ['CONNECT']
                     }
                 ]
-            }).then(ch => c.guilds.cache.get(data.Guild).channels.create(`🕑┊${wib}┊WIB`, {
+            }).then(ch => c.guilds.cache.get(data.Guild).channels.create(`『🕑』${wib}『WIB』`, {
                 type: 'voice',
                 parent: ch.id,
                 permissionOverwrites: [
@@ -84,7 +84,7 @@ module.exports = () => {
                         allow: ['VIEW_CHANNEL']
                     }
                 ]
-            }).then(wibch => c.guilds.cache.get(data.Guild).channels.create(`🕒┊${wita}┊WITA`, {
+            }).then(wibch => c.guilds.cache.get(data.Guild).channels.create(`『🕒』${wita}『WITA』`, {
                 type: 'voice',
                 parent: ch.id,
                 permissionOverwrites: [
@@ -94,7 +94,7 @@ module.exports = () => {
                         allow: ['VIEW_CHANNEL']
                     }
                 ]
-            }).then(witach => c.guilds.cache.get(data.Guild).channels.create(`🕕┊${wit}┊WIT`, {
+            }).then(witach => c.guilds.cache.get(data.Guild).channels.create(`『🕕』${wit}『WIT』`, {
                 type: 'voice',
                 parent: ch.id,
                 permissionOverwrites: [
