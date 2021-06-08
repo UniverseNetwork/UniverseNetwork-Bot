@@ -14,9 +14,8 @@ module.exports = () => {
         status = [
             'Versi ' + v,
             'Dibuat Oleh ARVIN3108 ID',
-            'IP: play.universnetwork.xyz',
-            'OneBlock Coming Soon',
-            'Selamat Hari Raya Idul Fitri 1442 H - Mohon Maaf Lahir Dan Batin'],
+            'IP: play.universenetwork.id',
+            'OneBlock Almost Done!'],
             data = await ck.findOne({ Guild: '761872006513033238' }).catch(e => console.log(e));
         c.user.setActivity(status[Math.floor(Math.random() * status.length)])
         if (c.channels.cache.get(data.WIB).name !== `『🕑』${wib}『WIB』` || c.channels.cache.get(data.WITA).name !== `『🕒』${wita}『WITA』` || c.channels.cache.get(data.WIT).name !== `『🕕』${wit}『WIT』`) {
