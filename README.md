@@ -9,9 +9,9 @@
 
   <p align="center">
     <br />
-    <a>[![Contributors][contributors-shield]][contributors-url]</a>
-    <a>[![Forks][forks-shield]][forks-url]</a>
-    <a>[![Stargazers][stars-shield]][stars-url]</a>
-    <a>[![Issues][issues-shield]][issues-url]</a>
+    [![Contributors][contributors-shield]][contributors-url]
+    [![Forks][forks-shield]][forks-url]
+    [![Stargazers][stars-shield]][stars-url]
+    [![Issues][issues-shield]][issues-url]
   </p>
 </p>
