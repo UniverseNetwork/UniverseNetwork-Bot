@@ -8,7 +8,6 @@
   <h3 align="center">UniverseNetwork Bot</h3>
 
   <p align="center">
-    <br />
     [![Contributors][contributors-shield]][contributors-url]
     [![Forks][forks-shield]][forks-url]
     [![Stargazers][stars-shield]][stars-url]
