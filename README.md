@@ -1,10 +1,17 @@
-# Universe Network Bot Beta
-## Commands Usage
-Default Prefix is `.`
-### List of Members Commands
-- `help` - Show all available commands
-- `ip` - Show the ip of the **Universe Network** minecraft server
-- `whatsapp` - Show the official WhatsApp group of the **Universe Network** 
-- `play` - Play songs just like another music bot
-- `repeat` Toggle song repeat mode 
-- ``
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/ARVIN3108/UniverseNetwork">
+    <img src="logo.jpg" alt="Logo" width="150" height="150">
+  </a>
+
+  <h3 align="center">UniverseNetwork Bot</h3>
+
+  <p align="center">
+    <br />
+    <a>[![Contributors][contributors-shield]][contributors-url]</a>
+    <a>[![Forks][forks-shield]][forks-url]</a>
+    <a>[![Stargazers][stars-shield]][stars-url]</a>
+    <a>[![Issues][issues-shield]][issues-url]</a>
+  </p>
+</p>
