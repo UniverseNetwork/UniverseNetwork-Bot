@@ -448,15 +448,31 @@
     "@discordjs/node-pre-gyp" "^0.4.0"
     node-addon-api "^3.2.1"
 
-"@discordjs/voice@discordjs/voice":
-  version "0.5.2"
-  resolved "https://codeload.github.com/discordjs/voice/tar.gz/6b5d0c37a1e80754aae58eca248ac683dc0b9eb9"
+"@discordjs/voice@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@discordjs/voice/-/voice-0.5.4.tgz#02af74778177be8f42772118ba2193af481f442e"
+  integrity sha512-CLkJH1YXHhLyocvwAgIJBeyCe3iBVvg6pDPcJUEAwg09TykjJRH6qSpg2ly858WffzR7jOsLcliODAOMDwKtnA==
   dependencies:
     "@types/ws" "^7.4.4"
     discord-api-types "^0.18.1"
     prism-media "^1.3.1"
     tiny-typed-emitter "^2.0.3"
     ws "^7.4.4"
+
+"@distube/soundcloud@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@distube/soundcloud/-/soundcloud-0.1.3.tgz#8b84f164badb712d01cd3d7f41325feacfe122b6"
+  integrity sha512-TtVg1kyAnTD2Snf8Mi4ACapoAH3GaMSQ72klwmNbmnSJjJKK201VmOofmfGAO86MMw/CdIsmt1mx9/grXrsdtA==
+  dependencies:
+    soundcloud.ts "^0.4.0"
+
+"@distube/spotify@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@distube/spotify/-/spotify-0.4.0.tgz#bdea730ad049f54390dccb90d19314cc0301c269"
+  integrity sha512-n/6oSjiPGxnedK6Od/r6n1hUWpMv+stR1cmIYJY9X4a3HHk/RCvPsqAyG7jw5Q1OGxByMTPQ6XbQ0Ei8KCYZQg==
+  dependencies:
+    spotify-uri "^2.2.0"
+    spotify-url-info "^2.2.3"
 
 "@distube/youtube-dl@^2.2.2":
   version "2.2.2"
@@ -1419,11 +1435,6 @@ async@^3.1.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
   integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
-
-async@~0.2.7:
-  version "0.2.10"
-  resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
-  integrity sha1-trvgsGdLnXGXCMo43owjfLUmw9E=
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -3232,13 +3243,6 @@ combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-combined-stream@~0.0.4:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-0.0.7.tgz#0137e657baa5a7541c57ac37ac5fc07d73b4dc1f"
-  integrity sha1-ATfmV7qlp1QcV6w3rF/AfXO03B8=
-  dependencies:
-    delayed-stream "0.0.5"
-
 commander@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-0.6.1.tgz#fa68a14f6a945d54dbbe50d8cdb3320e9e3b1a06"
@@ -3457,6 +3461,13 @@ create-react-class@^15.6.0:
   dependencies:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
+
+cross-fetch@~3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
+  integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
+  dependencies:
+    node-fetch "2.6.1"
 
 cross-spawn@^3.0.0:
   version "3.0.1"
@@ -3819,11 +3830,6 @@ defined@^1.0.0:
   resolved "https://registry.yarnpkg.com/defined/-/defined-1.0.0.tgz#c98d9bcef75674188e110969151199e39b1fa693"
   integrity sha1-yY2bzvdWdBiOEQlpFRGZ45sfppM=
 
-delayed-stream@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-0.0.5.tgz#d4b1f43a93e8296dfe02694f4680bc37a313c73f"
-  integrity sha1-1LH0OpPoKW3+AmlPRoC8N6MTxz8=
-
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -3955,10 +3961,10 @@ discord.js@^12.5.1, discord.js@^12.5.3:
     tweetnacl "^1.0.3"
     ws "^7.4.4"
 
-discord.js@^13.0.0-dev.9cd5e7e.1625745789:
-  version "13.0.0-dev.9cd5e7e.1625745789"
-  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-13.0.0-dev.9cd5e7e.1625745789.tgz#b529a3859bc19b22c37bd28cbb004002cd4fcf9d"
-  integrity sha512-MdA/3047c/zi4yhlWwopnyPiW+VijND3QPPhfwv5saD2TGE4vovh0zTFgPYurGLPzhlf/1p4eZF6EXLtOnGw3A==
+discord.js@^13.0.0-dev.5ca97c9.1626480265:
+  version "13.0.0-dev.5ca97c9.1626480265"
+  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-13.0.0-dev.5ca97c9.1626480265.tgz#54bbf6414e00d645cff2ff555d9c13ff129f5f33"
+  integrity sha512-icB9UE1yLwp0HpNyrXw9GUBs7x7mY0h+ZxHBxA93wSE9jjmle/Bf6OpCagdco5YDIBSBmnYF33Kysw3fCF7N8w==
   dependencies:
     "@discordjs/builders" "^0.2.0"
     "@discordjs/collection" "^0.1.6"
@@ -3970,10 +3976,10 @@ discord.js@^13.0.0-dev.9cd5e7e.1625745789:
     node-fetch "^2.6.1"
     ws "^7.5.1"
 
-distube@^3.0.0-alpha.10:
-  version "3.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/distube/-/distube-3.0.0-alpha.10.tgz#4299949a14d40de97806e5d31e51066e7485883b"
-  integrity sha512-qVyyJC0isz+r2KrRvlDgQv9GBtyoHjTj+yBS7amjaEPB/JpiZvoXhl1k5DPqsvqk44UTCAXvuIeSLx3wfCL6LQ==
+distube@^3.0.0-alpha.15:
+  version "3.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/distube/-/distube-3.0.0-alpha.15.tgz#d642b3d0338990f8d72d67399cd7a2f62bfba0cb"
+  integrity sha512-kR7vnNbYgd5Ahz1TW6ygXvXbSEdgaUFu4Bz0LrCmySQI/LEympWrNmfBGbamBF5s2om3V+PtD0BopR3lcEt98Q==
   dependencies:
     "@distube/youtube-dl" "^2.2.2"
     "@distube/ytpl" "^1.0.12"
@@ -5003,15 +5009,6 @@ form-data@^3.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-form-data@~0.0.3:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-0.0.10.tgz#db345a5378d86aeeb1ed5d553b869ac192d2f5ed"
-  integrity sha1-2zRaU3jYau6x7V1VO4aawZLS9e0=
-  dependencies:
-    async "~0.2.7"
-    combined-stream "~0.0.4"
-    mime "~1.2.2"
-
 form-data@~2.3.2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.3.3.tgz#dcce52c05f644f298c6a7ab936bd724ceffbf3a6"
@@ -5642,6 +5639,11 @@ hash.js@^1.0.0, hash.js@^1.0.3:
   dependencies:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
+
+himalaya@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/himalaya/-/himalaya-1.1.0.tgz#31724ae9d35714cd7c6f4be94888953f3604606a"
+  integrity sha512-LLase1dHCRMel68/HZTFft0N0wti0epHr3nNY7ynpLbyZpmrKMQ8YIpiOV77TM97cNpC8Wb2n6f66IRggwdWPw==
 
 hmac-drbg@^1.0.1:
   version "1.0.1"
@@ -7653,11 +7655,6 @@ mime@1.6.0, mime@^1.4.1, mime@^1.5.0:
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
   integrity sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
 
-mime@~1.2.2, mime@~1.2.7:
-  version "1.2.11"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-1.2.11.tgz#58203eed86e3a5ef17aed2b7d9ebd47f0a60dd10"
-  integrity sha1-WCA+7Ybjpe8XrtK32evUfwpg3RA=
-
 mimic-fn@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
@@ -7889,6 +7886,19 @@ moment-timezone@^0.5.33:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
+mongodb@3.6.10:
+  version "3.6.10"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.6.10.tgz#f10e990113c86b195c8af0599b9b3a90748b6ee4"
+  integrity sha512-fvIBQBF7KwCJnDZUnFFy4WqEFP8ibdXeFANnylW19+vOwdjOAvqIzPdsNCEMT6VKTHnYu4K64AWRih0mkFms6Q==
+  dependencies:
+    bl "^2.2.1"
+    bson "^1.1.4"
+    denque "^1.4.1"
+    optional-require "^1.0.3"
+    safe-buffer "^5.1.2"
+  optionalDependencies:
+    saslprep "^1.0.0"
+
 mongodb@3.6.8:
   version "3.6.8"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.6.8.tgz#3e2632af81915b3ff99b7681121ca0895e8ed407"
@@ -7925,16 +7935,16 @@ mongoose@^5.10.15:
     sift "13.5.2"
     sliced "1.0.1"
 
-mongoose@^5.13.2:
-  version "5.13.2"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.13.2.tgz#1b9095fc6bbbb015ea3bc2a79d6f56025406c769"
-  integrity sha512-sBUKJGpdwZCq9102Lj6ZOaLcW4z/T4TI9aGWrNX5ZlICwChKWG4Wo5qriLImdww3H7bETPW9vYtSiADNlA4wSQ==
+mongoose@^5.13.3:
+  version "5.13.3"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.13.3.tgz#42cb40207bbcaca9c6fa94b0a8c0a38181c1965e"
+  integrity sha512-q+zX6kqHAvwxf5speMWhq6qF4vdj+x6/kfD5RSKdZKNm52yGmaUygN+zgrtQjBZPFEzG0B3vF6GP0PoAGadE+w==
   dependencies:
     "@types/mongodb" "^3.5.27"
     "@types/node" "14.x || 15.x"
     bson "^1.1.4"
     kareem "2.3.2"
-    mongodb "3.6.8"
+    mongodb "3.6.10"
     mongoose-legacy-pluralize "1.0.2"
     mpath "0.8.3"
     mquery "3.2.5"
@@ -10223,14 +10233,6 @@ request-promise-native@^1.0.9:
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
-request@2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/request/-/request-2.12.0.tgz#11f46f20b3d0f4848c6383991c80790af16c8e48"
-  integrity sha1-EfRvILPQ9ISMY4OZHIB5CvFsjkg=
-  dependencies:
-    form-data "~0.0.3"
-    mime "~1.2.7"
-
 request@^2.87.0, request@^2.88.0:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
@@ -10794,6 +10796,13 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
+soundcloud.ts@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/soundcloud.ts/-/soundcloud.ts-0.4.0.tgz#0f06ff0ad20bb94ca8d24a56f584428762767f67"
+  integrity sha512-k7pQ6/FHrEpQa5l6izGvhh24KhWPbUZbQTQDusPlxR9Q/Jcb7G1/cvCgXOLHkJAeHCv38K+2enHJYKS1H+Oigw==
+  dependencies:
+    axios "^0.21.1"
+
 source-list-map@^0.1.7:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
@@ -10924,6 +10933,20 @@ split@0.2:
   integrity sha1-Zwl8YB1pfOE2j0GPBs0gHPBSGlc=
   dependencies:
     through "2"
+
+spotify-uri@^2.2.0, spotify-uri@~2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/spotify-uri/-/spotify-uri-2.2.0.tgz#8db641615cf6e122284874287fe39e89595922df"
+  integrity sha512-uUybj02bfyfCoZ0MJ80MkqbKxtIVRJfbRGk05KJFq1li3zb7yNfN1f+TAw4wcXgp7jLWExeiw2wyPQXZ8PHtfg==
+
+spotify-url-info@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/spotify-url-info/-/spotify-url-info-2.2.3.tgz#2f08400479f00472fb488eff4bd3c485db99361a"
+  integrity sha512-cZTE5nOnaAjIiaHG9psVYqKXWOlNUIgSU2e+bNInRaYZNgmVgOcKH0D7V1nSER3gv3h5BXvOo0EJTtrMQQo1bA==
+  dependencies:
+    cross-fetch "~3.1.4"
+    himalaya "~1.1.0"
+    spotify-uri "~2.2.0"
 
 sprintf-js@~1.0.2:
   version "1.0.3"
@@ -11915,13 +11938,6 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
-
-version@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/version/-/version-0.1.2.tgz#ab071b0e39c9a34e9308dd8cd7845795deeca70f"
-  integrity sha1-qwcbDjnJo06TCN2M14RXld7spw8=
-  dependencies:
-    request "2.12.0"
 
 viewport-dimensions@^0.2.0:
   version "0.2.0"
