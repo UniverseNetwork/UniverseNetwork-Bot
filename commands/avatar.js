@@ -1,23 +1,16 @@
-const { Message, Client } = require('discord.js')
 module.exports = {
     name: "avatar",
     description: "To show avatar",
-    /**
-    * @param {Message} message
-    * @param {String[]} args
-    * @param {Client} client
-    */
-    execute(message, MessageEmbed, Icon, Prefix, client) {
-        message.delete()
-        const member = message.mentions.members.first() || message.member;
-
-        message.channel.send(
-            new MessageEmbed()
+    run(m) {
+        m.delete();
+        let member = m.mentions.members.first() || m.member, { MessageEmbed } = require('discord.js'), g = m.client.guilds.cache.get('761872006513033238');
+        m.channel.send({
+            embeds: [new MessageEmbed()
                 .setColor('RANDOM')
-                .setAuthor('UniversNetwork', client.user.displayAvatarURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
-                .setTitle('**Prefix:** `' + Prefix + '`')
-                .setDescription(':clipboard: **Diminta Oleh** <@' + message.author + '>\n\u200B\n\u200B' + `<@${member.id}> Avatar`)
+                .setAuthor(g.name, g.iconURL({ dynamic: true }), 'https://minecraft-mp.com/server-s272254')
+                .setDescription(`:clipboard: **Diminta Oleh** ${m.author}\n\n\u200B ${member} Avatar`)
                 .setImage(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
-                .setFooter('Made By ARVIN3108 ID', Icon))
+                .setFooter('Made By ARVIN3108 ID', require('../config.json').Icon)]
+        })
     }
 }
