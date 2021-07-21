@@ -3929,12 +3929,6 @@ discord-api-types@^0.19.0:
   resolved "https://registry.yarnpkg.com/discord-api-types/-/discord-api-types-0.19.0.tgz#86ba8021b29190cf860e90a2bc3e29b1d7aab3ba"
   integrity sha512-t2HKLd43Lbe+rf+ffYfKVv9Kk5f6p7sFqvO6CMV55ZB0PgZv8WigCkt9FoJciYo5S3Q6CGYK+WnE/ZG+6vkBDQ==
 
-discord-slash-commands@ShadeDevelopment/discord-slash-commands:
-  version "2.0.0"
-  resolved "https://codeload.github.com/ShadeDevelopment/discord-slash-commands/tar.gz/be16b7cdc3076af20ed7211639e22c0b1c5a407c"
-  dependencies:
-    axios "^0.21.1"
-
 discord.js@^12.5.3:
   version "12.5.3"
   resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.5.3.tgz#56820d473c24320871df9ea0bbc6b462f21cf85c"

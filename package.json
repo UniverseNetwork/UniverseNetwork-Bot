@@ -20,7 +20,6 @@
     "canvas": "^2.8.0",
     "child_process": "^1.0.2",
     "datejs": "^1.0.0-rc3",
-    "discord-slash-commands": "ShadeDevelopment/discord-slash-commands",
     "discord.js": "^13.0.0-dev.1e90be8.1626825831",
     "distube": "^3.0.0-alpha.16",
     "ffmpeg-static": "^4.3.0",
