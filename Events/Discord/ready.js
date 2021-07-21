@@ -1,6 +1,5 @@
 module.exports = () => {
     const c = require('../../Modules/Client'),
-        s = require('../../Modules/Slash'),
         v = process.env.Version || require('../../config.json').Version;
     console.log(c.user.username + ' Bot is online')
     setInterval(async () => {
