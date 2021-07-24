@@ -3943,10 +3943,10 @@ discord.js@^12.5.3:
     tweetnacl "^1.0.3"
     ws "^7.4.4"
 
-discord.js@^13.0.0-dev.1e90be8.1626825831:
-  version "13.0.0-dev.1e90be8.1626825831"
-  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-13.0.0-dev.1e90be8.1626825831.tgz#2acfc7a95482863f4bafbe54464392f8d4a8ed3d"
-  integrity sha512-Kv32vfxiqHzSB4HY1MfHdvf868toZde86sPOCBhvmLbKZo5XaiZKMuZgfAUv7pBriNNTA0FtKoIid/2BqjuZqg==
+discord.js@^13.0.0-dev.4886ae2.1627128182:
+  version "13.0.0-dev.4886ae2.1627128182"
+  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-13.0.0-dev.4886ae2.1627128182.tgz#188e3f39c4fe9dbda0973139aa2f743539094b65"
+  integrity sha512-e13Bpj+zNsFLJbezTZRztBerKn1vmwbal0nIDP0inRZnEnZbHPWQ5/F+2JDsGHL0TTLsuTNr28zkKtdoU/2WTw==
   dependencies:
     "@discordjs/builders" "^0.2.0"
     "@discordjs/collection" "^0.1.6"
@@ -3958,10 +3958,10 @@ discord.js@^13.0.0-dev.1e90be8.1626825831:
     node-fetch "^2.6.1"
     ws "^7.5.1"
 
-distube@^3.0.0-alpha.16:
-  version "3.0.0-alpha.16"
-  resolved "https://registry.yarnpkg.com/distube/-/distube-3.0.0-alpha.16.tgz#8e161c7ef51a8f74b8e8b00bdcaa5ab314a89528"
-  integrity sha512-xVr9p46ROzdlooo0sEyPks4xqjnPiRCzGOiCjBEYoT1fOTwUCCcGl/HdM5fYa0bA5B0JJmFmyaYORyG754LW4g==
+distube@^3.0.0-alpha.17:
+  version "3.0.0-alpha.17"
+  resolved "https://registry.yarnpkg.com/distube/-/distube-3.0.0-alpha.17.tgz#a378f6af6ee0e6d1c79393157a36a5a395a56348"
+  integrity sha512-jbAvW64nXD3IyOQhytYaFRbTHtux/wAYqpUk3+iYoHkT5yVwGvMsSLc9v/EEMttd/36QUBESjDkAhqHApR4Q0A==
   dependencies:
     "@distube/youtube-dl" "^2.2.2"
     "@distube/ytpl" "^1.0.12"
