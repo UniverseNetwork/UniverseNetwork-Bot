@@ -8,6 +8,10 @@
   },
   "author": "ARVIN3108 ID",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Universe-Development-Department/UniverseNetwork-Bot.git"
+  },
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
     "@discordjs/voice": "^0.5.5",
@@ -21,8 +25,8 @@
     "canvas": "^2.8.0",
     "child_process": "^1.0.2",
     "datejs": "^1.0.0-rc3",
-    "discord.js": "^13.0.0-dev.4886ae2.1627300977",
-    "distube": "^3.0.0-alpha.17",
+    "discord.js": "dev",
+    "distube": "alpha",
     "erlpack": "discord/erlpack",
     "ffmpeg-static": "^4.4.0",
     "fs": "0.0.1-security",

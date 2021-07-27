@@ -2778,9 +2778,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord.js@npm:^13.0.0-dev.4886ae2.1627300977":
-  version: 13.0.0-dev.4886ae2.1627300977
-  resolution: "discord.js@npm:13.0.0-dev.4886ae2.1627300977"
+"discord.js@npm:dev":
+  version: 13.0.0-dev.4886ae2.1627344219
+  resolution: "discord.js@npm:13.0.0-dev.4886ae2.1627344219"
   dependencies:
     "@discordjs/builders": ^0.2.0
     "@discordjs/collection": ^0.1.6
@@ -2791,13 +2791,13 @@ __metadata:
     discord-api-types: ^0.19.0
     node-fetch: ^2.6.1
     ws: ^7.5.1
-  checksum: 963db9f6ba8dd39d5f559dc9b140c56e4c11c4df7a1ba985de6ac0ff36ca5f2bc1ff25743d20dfdd30429e7787478e6f6be3af7c96f061e1068a5b34ebcbce8c
+  checksum: 696e7a02232f89c0e6b0e2a1b38919a4506cfc9ed9594aa8678eb8629b0741df8706c8b02b89a64d10949107803b8df0af8b63a0944ce8fcb7fa06a3b4daac7d
   languageName: node
   linkType: hard
 
-"distube@npm:^3.0.0-alpha.17":
-  version: 3.0.0-beta.33.1
-  resolution: "distube@npm:3.0.0-beta.33.1"
+"distube@npm:alpha":
+  version: 3.0.0-alpha.17
+  resolution: "distube@npm:3.0.0-alpha.17"
   dependencies:
     "@distube/youtube-dl": ^2.2.2
     "@distube/ytpl": ^1.0.12
@@ -2805,8 +2805,9 @@ __metadata:
     ytdl-core: ^4.8.3
   peerDependencies:
     "@discordjs/opus": "*"
-    discord.js: 12||13||^13.0.0-0
-  checksum: 1bbb4d5f207bd4ebbd3ed57803186099081eb3f98918d60179f57ad163bcee2b6cb327eea582af1e2350274b549a854568ee896d986c663a43fa220dfa9d4751
+    "@discordjs/voice": ^0.5.3
+    discord.js: ^12.5.0||13||^13.0.0-0
+  checksum: 7b5b96b4b33d03cd0391d87158332589c7dd82a2fb7655fc315ffc56a21051f6a073793a67b55ee11f9bab587e475dd411ece699ccc6a9029aefbde2af965c62
   languageName: node
   linkType: hard
 
@@ -8145,8 +8146,8 @@ fsevents@^2.1.2:
     canvas: ^2.8.0
     child_process: ^1.0.2
     datejs: ^1.0.0-rc3
-    discord.js: ^13.0.0-dev.4886ae2.1627300977
-    distube: ^3.0.0-alpha.17
+    discord.js: dev
+    distube: alpha
     erlpack: discord/erlpack
     eslint: ^7.31.0
     ffmpeg-static: ^4.4.0
