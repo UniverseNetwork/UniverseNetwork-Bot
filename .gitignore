@@ -3,3 +3,5 @@ config.json
 *.vscode
 *.env
 *.bat
+.yarn/cache
+*.log
