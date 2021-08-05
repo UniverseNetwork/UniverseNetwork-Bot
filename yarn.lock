@@ -426,10 +426,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@canvacord/assets@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@canvacord/assets@npm:1.0.2"
-  checksum: 55e55c4b007df37b96d8d1aa6e69fe02982dd519e2354556c5f0a8e78dfcb6161db5d85fb584d1c56bee361c0d274d2977ae5c55c61f6cb1779100d1065fd4f5
+"@canvacord/assets@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "@canvacord/assets@npm:2.0.5"
+  checksum: 3e88abd8aa01c241856c49114de7bc4346747eb2ed6c1b2d12e7e91c120517f26a34727e0459f194dbff986322fab1bae47bfaa3476f66ecedc79f1f2232df0b
   languageName: node
   linkType: hard
 
@@ -578,10 +578,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discordjs/collection@npm:^0.1.6":
-  version: 0.1.6
-  resolution: "@discordjs/collection@npm:0.1.6"
-  checksum: a0ddf757098fa01a4d9d5812daf3c2ea88c1297618d346705e603642c2f19656188fbfb3d503ee77f2ee69e7a1c1bfe25932aec032692ee3c338335524886e05
+"@discordjs/collection@npm:^0.2.0":
+  version: 0.2.1
+  resolution: "@discordjs/collection@npm:0.2.1"
+  checksum: e68d4bbf83b03bc18c7648d0f5c5669d1f1a394596bc2fcbb907284cff65657b28dbf165a1b8ccae20b6bc0726bc8a0a276d8adba8f9413502bb19d61b98598f
   languageName: node
   linkType: hard
 
@@ -649,15 +649,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@distube/spotify@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@distube/spotify@npm:0.4.0"
+"@distube/spotify@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "@distube/spotify@npm:0.4.1"
   dependencies:
     spotify-uri: ^2.2.0
     spotify-url-info: ^2.2.3
   peerDependencies:
-    distube: 3||^3.0.0-0
-  checksum: 72fb9a07684fbd9f71263557ccba8e3ce90890f5f47fe080dfa79aa4f9fd6e42b6fc8fe3f3adba75ee5b060925f7f16408fd9a538abec046903589c5ff9e4f0f
+    distube: ^3.0.0-beta
+  checksum: 3a73c612a30dd581c60ecf0e6df7b890e6f9b73c6497c0b8519f3bc918611573ff8e5ed9b938847257a7be00d5b2c2d0bd35170c25a62e7e22216b55e7bf0ffa
   languageName: node
   linkType: hard
 
@@ -1181,13 +1181,6 @@ __metadata:
   version: 16.0.0
   resolution: "@types/node@npm:16.0.0"
   checksum: 57e5731ba8d64d9a6434c69f1153186b7fc1b0f58ae54f3eb8c32cd122e87e9aca35947f62e92e1902027994dac97b5bff7cce4d9c56cb319f07f694fe55d012
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:14.x || 15.x":
-  version: 15.14.1
-  resolution: "@types/node@npm:15.14.1"
-  checksum: efcc7e52a2d4d2e64c9e80ec72e3a08271a8536a713ffbfaa8391bd2a34bce599b8c2926eddc2f060a32df1c5dbd6a5d58be20ef4ac3fc6a45920622d4c87707
   languageName: node
   linkType: hard
 
@@ -2078,21 +2071,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"canvacord@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "canvacord@npm:5.2.1"
+"canvacord@npm:^5.2.3":
+  version: 5.2.3
+  resolution: "canvacord@npm:5.2.3"
   dependencies:
-    "@canvacord/assets": ^1.0.2
+    "@canvacord/assets": ^2.0.5
     "@canvacord/emoji-parser": ^1.0.1
-    canvas: ^2.7.0
+    canvas: ^2.8.0
     gifencoder: ^2.0.1
     moment: ^2.29.1
     moment-duration-format: ^2.3.2
-  checksum: 5e34df626ec0493a61e84ac22bd886d500e89761e51ceb75e2fe73e05bd9c1b094b25f29f98e4af43e19eec5def51498a1ea49e524c0f59adc145735678ce62b
+  checksum: a5e5fbedaaa5aa0e1aac1fd66c47be249ef469bcf3ff490349662b4ec0fa16b03f75570db614cc653ca90978e10198aa86f95f3f6aa6befad69aa367d61dfccf
   languageName: node
   linkType: hard
 
-"canvas@npm:^2.2.0, canvas@npm:^2.7.0, canvas@npm:^2.8.0":
+"canvas@npm:^2.2.0, canvas@npm:^2.8.0":
   version: 2.8.0
   resolution: "canvas@npm:2.8.0"
   dependencies:
@@ -2817,26 +2810,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord.js@npm:^13.0.0-dev.4f1f32f.1627517033":
-  version: 13.0.0-dev.4f1f32f.1627517033
-  resolution: "discord.js@npm:13.0.0-dev.4f1f32f.1627517033"
+"discord-api-types@npm:^0.21.0":
+  version: 0.21.0
+  resolution: "discord-api-types@npm:0.21.0"
+  checksum: 00872f1c453964d86579e59a6aa57fc7b2025b84bf7168fb4dad1d8e218db09dc78c20758ef9e15135bbfc76c9bf51102e671c0a20530e552ad7fc6f93a971c3
+  languageName: node
+  linkType: hard
+
+"discord.js@npm:dev":
+  version: 13.0.0-dev.t1627722888.65ae064
+  resolution: "discord.js@npm:13.0.0-dev.t1627722888.65ae064"
   dependencies:
     "@discordjs/builders": ^0.2.0
-    "@discordjs/collection": ^0.1.6
+    "@discordjs/collection": ^0.2.0
     "@discordjs/form-data": ^3.0.1
     "@sapphire/async-queue": ^1.1.4
     "@types/ws": ^7.4.5
     abort-controller: ^3.0.0
-    discord-api-types: ^0.19.0
+    discord-api-types: ^0.21.0
     node-fetch: ^2.6.1
     ws: ^7.5.1
-  checksum: 04c979a57434d3a3891ca241c90ef0a8ad0a674832d7363b9b9e3f473f3723b3288ff4f3651b945438c927423361a7694e4356e224053005704cb9f2d6e8278d
+  checksum: 708e988026566c214e80d0c62d4402d48ba82fce0349c604713e5fac6bfe330c2d5b96ab15b47db83ed0381d4dc914c762c5233dc7b018673b2e1c03745aad9f
   languageName: node
   linkType: hard
 
-"distube@npm:^3.0.0-alpha.17":
-  version: 3.0.0-beta.33.1
-  resolution: "distube@npm:3.0.0-beta.33.1"
+"distube@npm:alpha":
+  version: 3.0.0-alpha.17
+  resolution: "distube@npm:3.0.0-alpha.17"
   dependencies:
     "@distube/youtube-dl": ^2.2.2
     "@distube/ytpl": ^1.0.12
@@ -2844,8 +2844,9 @@ __metadata:
     ytdl-core: ^4.8.3
   peerDependencies:
     "@discordjs/opus": "*"
-    discord.js: 12||13||^13.0.0-0
-  checksum: 1bbb4d5f207bd4ebbd3ed57803186099081eb3f98918d60179f57ad163bcee2b6cb327eea582af1e2350274b549a854568ee896d986c663a43fa220dfa9d4751
+    "@discordjs/voice": ^0.5.3
+    discord.js: ^12.5.0||13||^13.0.0-0
+  checksum: 7b5b96b4b33d03cd0391d87158332589c7dd82a2fb7655fc315ffc56a21051f6a073793a67b55ee11f9bab587e475dd411ece699ccc6a9029aefbde2af965c62
   languageName: node
   linkType: hard
 
@@ -3159,9 +3160,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.31.0":
-  version: 7.31.0
-  resolution: "eslint@npm:7.31.0"
+"eslint@npm:^7.32.0":
+  version: 7.32.0
+  resolution: "eslint@npm:7.32.0"
   dependencies:
     "@babel/code-frame": 7.12.11
     "@eslint/eslintrc": ^0.4.3
@@ -3205,7 +3206,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: fd73d07ce0b73e5ea950b295a6eaf8d45914b4e56cba4ef49e55a36dc7e965a4865f63f618c0a096a01d089752d9e44180b80ba8657039b8e631dd40e0af1663
+  checksum: cc85af9985a3a11085c011f3d27abe8111006d34cc274291b3c4d7bea51a4e2ff6135780249becd919ba7f6d6d1ecc38a6b73dacb6a7be08d38453b344dc8d37
   languageName: node
   linkType: hard
 
@@ -5990,12 +5991,11 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"mongoose@npm:5.13.4, mongoose@npm:^5.13.4":
-  version: 5.13.4
-  resolution: "mongoose@npm:5.13.4"
+"mongoose@npm:5.13.5, mongoose@npm:^5.13.5":
+  version: 5.13.5
+  resolution: "mongoose@npm:5.13.5"
   dependencies:
     "@types/mongodb": ^3.5.27
-    "@types/node": 14.x || 15.x
     bson: ^1.1.4
     kareem: 2.3.2
     mongodb: 3.6.10
@@ -6008,7 +6008,7 @@ fsevents@^2.1.2:
     safe-buffer: 5.2.1
     sift: 13.5.2
     sliced: 1.0.1
-  checksum: faa9d95f5b54e5241b1193c5d7468f5b4dcf8f3cf4546ee309497c587acb0de97e2b5ec54d97291b4c8d268a407762c5b3482d2a7f9dfa13fecd95ab010da97a
+  checksum: 392a9ee0ffb0d1cc609c97e50bfc876f6f5c47033f9cc96825c969df73daa06ce308c41fd6b4c113f3af78be40184a0053972c921eae40b633cbb533a58a645c
   languageName: node
   linkType: hard
 
@@ -8210,48 +8210,48 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"twitch-api-call@npm:^4.6.4":
-  version: 4.6.4
-  resolution: "twitch-api-call@npm:4.6.4"
+"twitch-api-call@npm:^4.6.5":
+  version: 4.6.5
+  resolution: "twitch-api-call@npm:4.6.5"
   dependencies:
     "@d-fischer/cross-fetch": ^4.0.2
     "@d-fischer/qs": ^7.0.2
     "@types/node-fetch": ^2.5.7
     node-fetch: ^2.6.1
     tslib: ^2.0.3
-    twitch-common: ^4.6.4
-  checksum: 3a2ed9ecfab1122415cfd13622de44ec952bf3219c4af6686cf57c3a4f8f2cccbfd8101945746c669c63ddbaac82f28f45765cae0b6dc0717bf3eaae87159172
+    twitch-common: ^4.6.5
+  checksum: f3595a3a7c804f4af5a11a26f9056ee50a551291a0589a18f85990a8ced141223ad72cfcec3f5696e6efe1c7349726e3bc031ac3344300a453ec9f798f638168
   languageName: node
   linkType: hard
 
-"twitch-auth@npm:^4.6.4":
-  version: 4.6.4
-  resolution: "twitch-auth@npm:4.6.4"
+"twitch-auth@npm:^4.6.5":
+  version: 4.6.5
+  resolution: "twitch-auth@npm:4.6.5"
   dependencies:
     "@d-fischer/deprecate": ^2.0.2
     "@d-fischer/logger": ^3.1.0
     "@d-fischer/shared-utils": ^3.0.1
     tslib: ^2.0.3
-    twitch-api-call: ^4.6.4
-    twitch-common: ^4.6.4
-  checksum: 5dfc1287666980f8a8ff421bedd7f61c00999df72dbdd58c92c8873104afeb8c3c39e5dd8d09b8b5da09ef6b889b667457fc399da10886fdfea782395ac46231
+    twitch-api-call: ^4.6.5
+    twitch-common: ^4.6.5
+  checksum: ee4668d83b576ba46642067093fcef1558d7b24404ca9723f2e1a011c5de81d1c54bd9d6b24f0e1d761938b2b62470103f7942080868e1d49a8b8d5f6cd1d47f
   languageName: node
   linkType: hard
 
-"twitch-common@npm:^4.6.4":
-  version: 4.6.4
-  resolution: "twitch-common@npm:4.6.4"
+"twitch-common@npm:^4.6.5":
+  version: 4.6.5
+  resolution: "twitch-common@npm:4.6.5"
   dependencies:
     "@d-fischer/logger": ^3.1.0
     "@d-fischer/shared-utils": ^3.0.1
     tslib: ^2.0.3
-  checksum: 8acd57e474e3826225837adaf6755c0c89de9b1f6aca9119e82a96143e3a19a2af11ff5aa1c26e39a738981b17ed9851074a8fb9ec1818ea1d6410aa6ce55c82
+  checksum: 637eaf4253f9c871f7ca729d1489a7fb5fec9ef2925ff79052250b52cb2f2dc10f47bd7997756ed16a8b1bbb107c4039f881cefbd999301ccc4c655d8505e513
   languageName: node
   linkType: hard
 
-"twitch@npm:^4.6.4":
-  version: 4.6.4
-  resolution: "twitch@npm:4.6.4"
+"twitch@npm:^4.6.5":
+  version: 4.6.5
+  resolution: "twitch@npm:4.6.5"
   dependencies:
     "@d-fischer/cache-decorators": ^2.1.1
     "@d-fischer/deprecate": ^2.0.2
@@ -8260,10 +8260,10 @@ fsevents@^2.1.2:
     "@d-fischer/shared-utils": ^3.0.1
     top-package: ^1.0.0
     tslib: ^2.0.3
-    twitch-api-call: ^4.6.4
-    twitch-auth: ^4.6.4
-    twitch-common: ^4.6.4
-  checksum: 949aa63094761ff706e42fcc0dc398bc978380b6d87b1597c2ebee236e20a0e78427acb5ac404cbcc4c7f42a365026e04a9dbf0585b62216668ea49aabf9cfe4
+    twitch-api-call: ^4.6.5
+    twitch-auth: ^4.6.5
+    twitch-common: ^4.6.5
+  checksum: a59dc9741cfcc9988ffad63adb3aa0eeb2d7273b4c11884b2abcd36a819d3de6c56f4529c24c94acbc5fe4af2320e9689ad5ecd6eb0f6bf1ccacfdb171d89922
   languageName: node
   linkType: hard
 
@@ -8412,31 +8412,31 @@ fsevents@^2.1.2:
     "@discordjs/opus": ^0.5.3
     "@discordjs/voice": ^0.5.5
     "@distube/soundcloud": ^0.1.3
-    "@distube/spotify": ^0.4.0
+    "@distube/spotify": ^0.4.1
     "@iamtraction/google-translate": ^1.1.2
     "@reconlx/discord.js": ^1.1.101
     axios: ^0.21.1
     bufferutil: ^4.0.3
-    canvacord: ^5.2.1
+    canvacord: ^5.2.3
     canvas: ^2.8.0
     child_process: ^1.0.2
     datejs: ^1.0.0-rc3
-    discord.js: ^13.0.0-dev.4f1f32f.1627517033
-    distube: ^3.0.0-alpha.17
-    eslint: ^7.31.0
+    discord.js: dev
+    distube: alpha
+    eslint: ^7.32.0
     ffmpeg-static: ^4.4.0
     fs: 0.0.1-security
     images-scraper: ^6.3.0
     libsodium-wrappers: ^0.7.9
     minecraft-server-util: ^3.5.2
     moment-timezone: ^0.5.33
-    mongoose: ^5.13.4
+    mongoose: ^5.13.5
     ms: ^2.1.3
     node-fetch: ^2.6.1
     opusscript: 0.0.8
     request: ^2.88.2
     request-promise-native: ^1.0.9
-    twitch: ^4.6.4
+    twitch: ^4.6.5
     utf-8-validate: ^5.0.5
     youtube-notification: ^1.1.0
     zlib-sync: ^0.1.7
