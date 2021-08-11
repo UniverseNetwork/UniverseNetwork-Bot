@@ -5,5 +5,5 @@ config.json
 *.bat
 .yarn/cache
 *.log
-Events/Discord/messageReactionAdd
+messageReactionAdd.js
 voiceStateUpdate.js

@@ -1,4 +1,4 @@
 module.exports = c => {
-    if (c.type !== 'text') return;
+    if (c.type !== 'GUILD_TEXT') return;
     c.createWebhook('UniversNetwork').catch(e => console.log(e));
 }
