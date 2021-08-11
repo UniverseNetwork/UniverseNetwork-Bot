@@ -681,6 +681,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@distube/ytdl-core@npm:^4.9.2":
+  version: 4.9.3
+  resolution: "@distube/ytdl-core@npm:4.9.3"
+  dependencies:
+    m3u8stream: ^0.8.3
+    miniget: ^4.0.0
+    sax: ^1.1.3
+  checksum: ecf6d2423293885faa30e3e7179bc4b66b099d9c38e847558f00a648d4f969ca4ff4f7bd25ab5040f3af8cf5034a39728473dd31acef9c50327393a2d2c93c53
+  languageName: node
+  linkType: hard
+
 "@distube/ytpl@npm:^1.0.12":
   version: 1.0.12
   resolution: "@distube/ytpl@npm:1.0.12"
@@ -690,12 +701,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@distube/ytsr@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@distube/ytsr@npm:1.1.2"
+"@distube/ytsr@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "@distube/ytsr@npm:1.1.5"
   dependencies:
     miniget: ^4.2.1
-  checksum: b35a79ff49930c269568fa3e431610562c5ad6ea5361eb5f62cd46ad46e3cae60d94bc4ce920cf960427994de906dea989c8b218447e89c3d5c24cd4ef7e4050
+  checksum: c86498714e24973121e947c90ee343cf1f271f761bffa8b69d91c7aad2a28633db57e0b19380606d8eb3fa7622a005e6b06a39c00f983a45b77d0245a4eae51e
   languageName: node
   linkType: hard
 
@@ -2830,19 +2841,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"distube@npm:alpha":
-  version: 3.0.0-alpha.17
-  resolution: "distube@npm:3.0.0-alpha.17"
+"distube@npm:beta":
+  version: 3.0.0-beta.35
+  resolution: "distube@npm:3.0.0-beta.35"
   dependencies:
     "@distube/youtube-dl": ^2.2.2
+    "@distube/ytdl-core": ^4.9.2
     "@distube/ytpl": ^1.0.12
-    "@distube/ytsr": ^1.1.2
-    ytdl-core: ^4.8.3
+    "@distube/ytsr": ^1.1.5
   peerDependencies:
     "@discordjs/opus": "*"
-    "@discordjs/voice": ^0.5.3
-    discord.js: ^12.5.0||13||^13.0.0-0
-  checksum: 7b5b96b4b33d03cd0391d87158332589c7dd82a2fb7655fc315ffc56a21051f6a073793a67b55ee11f9bab587e475dd411ece699ccc6a9029aefbde2af965c62
+    "@discordjs/voice": ^0.5.6
+    discord.js: ^12.5.0||^13.0.0
+  checksum: 001657eddc01cce93403247d93cfd5e304b98dd7332fc0502986b28ffabe8e26dd3e455eb12b8bb4bdf7b612aea48dc199215996a4537e9862a972f78462dbcc
   languageName: node
   linkType: hard
 
@@ -8540,7 +8551,7 @@ fsevents@^2.1.2:
     child_process: ^1.0.2
     datejs: ^1.0.0-rc3
     discord.js: dev
-    distube: alpha
+    distube: beta
     eslint: ^7.32.0
     ffmpeg-static: ^4.4.0
     fs: 0.0.1-security
@@ -9022,17 +9033,6 @@ fsevents@^2.1.2:
     express: ^4.17.1
     xml2js: ^0.4.23
   checksum: 1dc43d187abc25004978c58646fd05ab63257ff42700ba9c782aa1a6ac36a5fce3284ca7a284fb1efcdbb62e5f90b4337f8c0a00da8edf8aa25f61d98260c17a
-  languageName: node
-  linkType: hard
-
-"ytdl-core@npm:^4.8.3":
-  version: 4.8.3
-  resolution: "ytdl-core@npm:4.8.3"
-  dependencies:
-    m3u8stream: ^0.8.3
-    miniget: ^4.0.0
-    sax: ^1.1.3
-  checksum: b6044d1ea899d0ae5c0ba29d46647bedbcb5b3703559393325ef5404422868903b6a8a9fa92918078952ea0aee2597577883fce9eb2cba87ec3202bf57916fe6
   languageName: node
   linkType: hard
 

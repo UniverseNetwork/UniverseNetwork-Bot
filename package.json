@@ -26,7 +26,7 @@
     "child_process": "^1.0.2",
     "datejs": "^1.0.0-rc3",
     "discord.js": "dev",
-    "distube": "alpha",
+    "distube": "beta",
     "ffmpeg-static": "^4.4.0",
     "fs": "0.0.1-security",
     "images-scraper": "^6.3.0",
