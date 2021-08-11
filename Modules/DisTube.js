@@ -1,2 +1,2 @@
-let { DisTube } = require('distube'), s = require('@distube/spotify'), S = require('@distube/soundcloud');
-module.exports = new DisTube(require('./Client'), { emitNewSongOnly: true, plugins: [new s(), new S()] });
+let { DisTube } = require('distube'), { SpotifyPlugin } = require('@distube/spotify'), { SoundCloudPlugin } = require('@distube/soundcloud');
+module.exports = new DisTube(require('./Client'), { emitNewSongOnly: true, plugins: [new SpotifyPlugin(), new SoundCloudPlugin()] });
