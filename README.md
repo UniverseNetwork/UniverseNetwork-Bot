@@ -15,4 +15,4 @@
 </p>
 
 ## About
-This bot is a smart bot that can be used to play songs, kick members, ban members, etc. This bot is built using [Node.js](https://nodejs.org) and [Discord.js](https://discord.js.org) for [UniverseNetwork discord server](https://universenetwork.id/discord)
+This bot is a smart bot that can be used to play songs, kick members, ban members, etc. This bot is built using [Node.js](https://nodejs.org) and [Discord.js](https://discord.js.org) for [UniverseNetwork discord server](https://universenetwork.id/discord). This project is archived and may be continued later.
